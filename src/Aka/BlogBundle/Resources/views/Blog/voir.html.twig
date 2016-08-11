@@ -1,0 +1,38 @@
+{# src/Aka/BlogBundle/Resources/views/Blog/voir.html.twig #}
+
+{% extends "AkaBlogBundle::layout.html.twig" %}
+
+  {% block title %}
+Reading of  article - {{ parent() }}
+
+{% endblock %}
+
+  {% block akablog_body %}
+  <h2>{{ article.titre }}</h2>
+  <i>Par {{ article.auteur }}, le {{ article.date|date('d/m/Y')
+}}</i>
+
+
+  <div class="well">
+   {{ article.contenu }}
+  </div>
+  
+  <p>
+   <a href="{{ path('akablog_accueil') }}" class="btn">
+    <i class="glyphicon glyphicon-chevron-left"></i>
+    Back to Main page
+   </a>
+   
+   <a href="{{ path('akablog_modifier', {'id': article.id}) }}"
+  class="btn">
+    <i class="glyphicon glyphicon-edit"></i>
+     Modify the article
+    </a>
+    <a href="{{ path('akablog_supprimer', {'id': article.id}) }}"
+    class="btn">
+     <i class="glyphicon glyphicon-trash"></i>
+     Delete the article
+   </a>
+  </p>
+  
+{% endblock %}

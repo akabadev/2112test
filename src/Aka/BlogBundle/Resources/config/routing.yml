@@ -1,0 +1,27 @@
+
+# src/Aka/BlogBundle/Resources/config/routing.yml
+
+akablog_accueil:
+    path:      /{page}
+    defaults:  { _controller: AkaBlogBundle:Blog:index, page: 1 }
+    requirements:
+
+akablog_voir:
+    path:      /article/{id}
+    defaults:      { _controller: AkaBlogBundle:Blog:voir }
+
+akablog_ajouter:
+    path:      /ajouter
+    defaults:  { _controller: AkaBlogBundle:Blog:ajouter }
+
+akablog_modifier:
+    path:      /modifier/{id}
+    defaults:  { _controller: AkaBlogBundle:Blog:modifier }
+    requirements:
+        id: \d+
+
+akablog_supprimer:
+    path:      /supprimer/{id}
+    defaults:  { _controller: AkaBlogBundle:Blog:supprimer }
+    requirements:
+        id: \d+

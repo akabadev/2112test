@@ -1,0 +1,6 @@
+aka_blog:
+    resource: "@AkaBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+
+
+

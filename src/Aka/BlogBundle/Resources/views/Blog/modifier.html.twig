@@ -1,0 +1,29 @@
+{# src/Aka/BlogBundle/Resources/views/Blog/modifier.html.twig #}
+
+{% extends "AkaBlogBundle::layout.html.twig" %}
+
+{% block title %}
+Modify an  article - {{ parent() }}
+{% endblock %}
+
+{% block akablog_body %}
+<h2>Modify an article</h2>
+
+{% include "AkaBlogBundle:Blog:formulaire.html.twig" %}
+
+<p>
+This article already exist
+Please don't modify too much 
+because other people won't be able 
+to understand
+</p>
+
+<p>
+<a href="{{ path('akablog_voir', {'id': article.id}) }}"
+class="btn">
+<i class="icon-chevron-left"></i>
+Back to the article
+</a>
+</p>
+
+{% endblock %}
